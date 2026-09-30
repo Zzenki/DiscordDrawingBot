@@ -20,7 +20,10 @@ if not TOKEN:
             "or create a token.txt file with your bot token."
         )
 
-DATA_FILE = "data.json"
+if os.path.isdir("/data"):
+    DATA_FILE = "/data/data.json"
+else:
+    DATA_FILE = "data.json"
 
 intents = discord.Intents.default()
 intents.message_content = True
